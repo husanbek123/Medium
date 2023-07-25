@@ -1,6 +1,13 @@
+@import "/src/styles/variables.scss";
+
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  padding: $padding1;
+
+  h3 {
+    font-weight: 400;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
-import defaultLinks from "@/defaults/defaultLinks";
+import defaultLinks from "@/defaults/links";
 import Link from "next/link";
 
 type Props = {};
@@ -8,8 +8,10 @@ type Props = {};
 export default function FooterNavigation({}: Props) {
   return (
     <ul className={styles.list}>
-      {defaultLinks.map((item) => (
-        <Link href={item.href}>{item.title}</Link>
+      {defaultLinks.slice(0, 3).map((item) => (
+        <Link href={item.href}>
+          <li>{item.title}</li>
+        </Link>
       ))}
     </ul>
   );
