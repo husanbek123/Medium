@@ -1,29 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  let hotels = [
-    {
-      title: "Nurjahon-Hotel",
-      roomPrices: {
-        1: "50$",
-        2: "200$",
-        3: "300$",
-      },
-    },
-    {
-      title: "Nurjahon-Hotel",
-      roomPrices: {
-        1: "50$",
-        2: "200$",
-        3: "300$",
-      },
-    },
-  ];
 
   return (
     <>
@@ -33,7 +13,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+      <div
+        style={{
+          background: "blue",
+          height : "70vh"
+        }}
+      ></div>
+      <div
+        style={{
+          background: "red",
+          height : "100vh"
+        }}
+      ></div>
     </>
   );
 }
