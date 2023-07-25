@@ -1,0 +1,13 @@
+.navigtion {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  gap: 20px;
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-content: center;
+    font-size: 15px;
+  }
+}

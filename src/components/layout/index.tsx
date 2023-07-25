@@ -4,15 +4,15 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 
 type Props = {
-  children: ReactNode
+  children: ReactNode;
 };
 
 export default function Layout({ children }: Props) {
   return (
     <div className={styles.layout}>
       <Navbar />
-      {children}
+      <main>{children}</main>
       <Footer />
     </div>
-  )
+  );
 }

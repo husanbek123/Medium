@@ -1,0 +1,11 @@
+.button {
+  padding: 10px 20px;
+  border-radius: 16px;
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    opacity: 0.5;
+  }
+}

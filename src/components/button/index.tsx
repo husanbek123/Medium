@@ -1,26 +1,21 @@
 import React from "react";
 import styles from "./index.module.scss";
-import Pages from "@/defaults/pages";
+import Link from "next/link";
 
-type Props = {
-  text: string;
-  borderRadius?: string;
-  backgroundColor?: string;
-  padding?: string;
-  fontColor?: string;
-};
-
-export default function Button({ text, ...props }: Props) {
-  
-
+export default function Button({
+  className,
+  children,
+  ...props
+}: Partial<
+  Omit<React.HTMLProps<HTMLButtonElement>, "children"> & { children: string }
+>) {
   return (
-    <div
-      style={{
-        ...props,
-      }}
-      className={styles.button}
+    <Link
+      href={props.href}
+      className={[styles.button, styles[className || ""]].join(" ")}
+      {...(props as any)}
     >
-      {text}
-    </div>
+      {children}
+    </Link>
   );
 }
