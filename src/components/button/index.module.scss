@@ -1,11 +1,22 @@
 .button {
   padding: 10px 20px;
-  border-radius: 16px;
+  border-radius: 50px;
   background-color: black;
   color: white;
   transition: 0.3s;
+  border: 1px solid transparent;
   &:hover {
     transition: 0.3s;
     opacity: 0.5;
+  }
+}
+
+.transparent {
+  &:hover {
+    border-color: white !important;
+    color: white !important;
+    transition: 0.3s;
+    opacity: 1;
+    background-color: transparent !important;
   }
 }

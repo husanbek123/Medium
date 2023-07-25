@@ -35,7 +35,7 @@ export default function Navbar({}: Props) {
       }}
     >
       <div className={["container", styles.container].join(" ")}>
-        <Logo />
+        <Logo color={router.asPath === "/membership" && "light"} />
         <Navigation
           signed={!!token}
           color={
