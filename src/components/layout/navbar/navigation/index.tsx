@@ -21,11 +21,11 @@ export default function Navigation({
   data = defaultLinks,
   signed = false,
 }: Props) {
-  const router = useRouter()
-  
+  const router = useRouter();
+
   return (
     !signed && (
-      <div className={[styles.navigtion , roboto.className].join(' ')}>
+      <div className={[styles.navigtion, roboto.className].join(" ")}>
         <div className={styles.navigtion__links}>
           {data
             .filter((item) => item.type == "link")
@@ -36,7 +36,10 @@ export default function Navigation({
                 key={index}
                 style={{
                   color,
-                  borderBottom :  router.asPath.slice(1) == item.href ? `1px solid ${color}` : ''
+                  borderBottom:
+                    router.asPath.slice(1) == item.href
+                      ? `1px solid ${color}`
+                      : "",
                 }}
               >
                 {item.title}

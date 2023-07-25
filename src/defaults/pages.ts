@@ -1,18 +1,23 @@
-const Pages = [
+const Pages : DataTypes.IPage[] = [
+  {
+    pagename: "",
+    path: "/",
+    navbarBackground: "#FFC017",
+  },
   {
     pagename: "Our story",
-    pagename_uz: "Biz haqimizda",
     path: "/about",
+    navbarBackground: "white",
   },
   {
     pagename: "Membership",
-    pagename_uz: "Azo bo'lish",
     path: "/membership",
+    navbarBackground: "rgb(68, 121, 255)",
   },
   {
     pagename: "Write",
-    pagename_uz: "Yozish",
     path: "/creators",
+    navbarBackground: "rgb(242, 77, 46)",
   },
 ];
-export default Pages
+export default Pages;

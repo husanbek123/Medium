@@ -3,6 +3,11 @@ namespace DataTypes {
     token: string;
     setToken: (token: string) => void;
   }
+  export interface IPage  {
+    pagename : string,
+    path : string,
+    navbarBackground : string
+  }
   export type LinkData = {
     title: string;
     href: string;
