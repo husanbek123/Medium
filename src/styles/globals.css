@@ -8,7 +8,9 @@
 .container {
   width: 90%;
   margin: 0 auto;
+  max-width: 1440px;
 }
+
 
 .membership-center {
   text-align: center;

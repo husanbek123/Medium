@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./index.module.scss";
 import Link from "next/link";
 import Button from "@/components/button";
-import defaultLinks from "@/defaults/defaultLinks";
-import { Herr_Von_Muellerhoff, Roboto } from "next/font/google";
+import defaultLinks from "@/defaults/links";
+import { Roboto } from "next/font/google";
 import { useRouter } from "next/router";
 
 const roboto = Roboto({
