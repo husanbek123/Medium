@@ -10,4 +10,17 @@
     justify-content: center;
     font-size: 15px;
   }
+  &__dropdown {
+    display: none;
+  }
+}
+@media (max-width: 730px) {
+  .navigtion {
+    &__links {
+      display: none;
+    }
+    &__dropdown {
+      display: block;
+    }
+  }
 }

@@ -4,13 +4,22 @@
   align-items: center;
   color: black;
   transition: 0.3s;
-
-  img {
-  }
-
+  width: 30%;
   h2 {
     font-weight: 200;
     margin-left: -15px;
     font-family: Georgia, "Times New Roman", Times, serif;
+  }
+}
+@media(max-width:500px){
+  .logo{
+    width: 35%;
+    gap: 20px;
+    h2{
+      font-size: 17px;
+    }
+    img{
+      width: 30%;
+    }
   }
 }

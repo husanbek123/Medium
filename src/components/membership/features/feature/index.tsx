@@ -13,7 +13,7 @@ export default function Feature({ title, description, imgSrc }: Props) {
     <div className={styles.feature}>
       <h2>{title}</h2>
       <div>
-        <img src={imgSrc} alt="" width={300} height={200} />
+        <Image src={imgSrc} alt="" width={300} height={200} />
       </div>
       <p>{description}</p>
     </div>
