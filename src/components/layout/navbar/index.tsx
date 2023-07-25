@@ -13,7 +13,7 @@ export default function Navbar({}: Props) {
   const [show, setShow] = React.useState(false);
   const pageOptions = Pages.find((i) => i.path == router.asPath);
   console.log(pageOptions?.navbarBackground);
-  
+
   React.useEffect(() => {
     const controlNavbar = () => {
       if (window && window?.scrollY > 300) {
@@ -35,11 +35,13 @@ export default function Navbar({}: Props) {
       }}
     >
       <div className={["container", styles.container].join(" ")}>
-        <Logo color={router.asPath === "/membership" && "light"} />
+        <Logo
+          color={router.asPath === "/membership" && !show ? "light" : "dark"}
+        />
         <Navigation
           signed={!!token}
           color={
-            router.asPath === "/membership" ? "#ffffff" : "#000000"
+            router.asPath === "/membership" && !show ? "#ffffff" : "#000000"
           }
         />
       </div>
