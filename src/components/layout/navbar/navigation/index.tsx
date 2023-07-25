@@ -61,7 +61,7 @@ export default function Navigation({
             >
               <Menu.Target>
                 <div>
-                  <Burger opened={opened} onClick={toggle} />
+                  <Burger opened={opened} onClick={toggle} fz={"sm"} />
                 </div>
               </Menu.Target>
 
@@ -73,7 +73,6 @@ export default function Navigation({
                     gap: "20px",
                     padding: "10px 15px",
                   }}
-                  
                 >
                   {data
                     ?.filter((item) => item.type == "link")

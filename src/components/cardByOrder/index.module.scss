@@ -1,0 +1,83 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  .card {
+    // margin: 0 auto;
+    width: 100%;
+    height: auto;
+    min-width: 250px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    &__order {
+      h2 {
+        color: #f2f2f2;
+        font-size: 30px;
+      }
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 20px;
+      &__company {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        &__image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        &__name {
+          font-size: 13px;
+          color: black;
+          font-weight: 600;
+        }
+      }
+      &__info {
+        display: flex;
+        gap: 5px;
+        p {
+          font-size: 13px;
+          color: #6b6b6b;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 900px) and (min-width: 611px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 610px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    .card {
+        &__order {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+        }
+        &__content {
+          gap: 10px;
+        padding-left: 5px;
+        &__title {
+          h3 {
+            font-size: 15px;
+          }
+        }
+        &__info {
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
