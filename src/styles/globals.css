@@ -5,7 +5,18 @@
   text-decoration: none;
 }
 
-.container{
+.container {
   width: 90%;
   margin: 0 auto;
+}
+
+.membership-center {
+  text-align: center;
+}
+.paddings {
+  padding: 20px;
+}
+
+.default-font-sizes h1 {
+  font-size: 62px;
 }

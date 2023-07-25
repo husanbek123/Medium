@@ -1,0 +1,11 @@
+.features {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid white;
+}
+
+.features__verLine {
+  width: 1px;
+  margin: 0 12px;
+  background-color: white;
+}

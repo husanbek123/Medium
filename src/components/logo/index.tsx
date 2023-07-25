@@ -8,7 +8,7 @@ type Props = {};
 export default function Logo({}: Props) {
   return (
     <Link href="/" className={styles.logo}>
-      <Image src={"/logo.svg"} alt="" width={100} height={60} />
+      <Image src={"/medium.svg"} alt="" width={100} height={60} />
       <h2>Medium</h2>
     </Link>
   );
