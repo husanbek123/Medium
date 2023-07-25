@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
+import TopUserCards from "@/components/topUserCard";
+
 
 
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -15,14 +16,15 @@ export default function Home() {
       </Head>
       <div
         style={{
-          background: "blue",
-          height : "70vh"
+          height: "70vh",
         }}
-      ></div>
+      >
+        <TopUserCards />
+      </div>
       <div
         style={{
           background: "red",
-          height : "100vh"
+          height: "100vh",
         }}
       ></div>
     </>

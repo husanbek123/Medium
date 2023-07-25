@@ -8,6 +8,11 @@ namespace DataTypes {
     path : string,
     navbarBackground : string
   }
+  export interface ITopUser {
+    image : string,
+    name : string
+    description ?: string
+  }
   export type LinkData = {
     title: string;
     href: string;
