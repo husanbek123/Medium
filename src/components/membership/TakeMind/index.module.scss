@@ -1,0 +1,27 @@
+@import "/src/styles/variables.scss";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $padding1;
+  position: relative;
+  background-color: #bcdfff;
+  height: 400px;
+
+  h1 {
+    width: 75%;
+    text-align: center;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    line-height: 52px;
+    font-weight: 500;
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

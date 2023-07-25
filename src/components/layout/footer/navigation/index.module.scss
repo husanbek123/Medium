@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  align-items: center;
+  column-gap: 1cqi;
+  list-style: none;
+  li {
+    font-size: 14px;
+    color: black;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
