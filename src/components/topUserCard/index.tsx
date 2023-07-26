@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./index.module.scss";
 import defaultTopUsers from "@/defaults/topUsers";
 import { Roboto } from "next/font/google";
+import { Avatar } from "@mantine/core";
 
 type Props = {
   image: string;
@@ -21,9 +22,7 @@ function TopUserCard({
 }: Partial<React.HTMLProps<HTMLElement>> & Props) {
   return (
     <div className={[styles.card, roboto.className].join(" ")}>
-      <div>
-        <Image src={props.image} alt="Image" width={100} height={100} />
-      </div>
+      <Avatar src={props.image} alt="it's me" size={"sm"} radius={"xl"} />
       <div className={styles.card__titles} style={{ color }}>
         <h2 className={styles.card__titles__name}>{props.name}</h2>
         <p className={styles.card__titles__description} style={{}}>

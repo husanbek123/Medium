@@ -31,7 +31,7 @@ export default function Navbar({}: Props) {
     <header
       className={[styles.navbar, show && styles.hidden].join(" ")}
       style={{
-        background: pageOptions?.navbarBackground,
+        background: pageOptions?.navbarBackground || 'white',
         borderBottom: `2px solid ${
           pageOptions?.navbarBackground == "#4479ff" ? "white" : "black"
         }`,

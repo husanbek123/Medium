@@ -3,7 +3,6 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 
 import { Roboto } from "next/font/google";
-import { useRouter } from "next/router";
 
 const roboto = Roboto({
   weight: "400",

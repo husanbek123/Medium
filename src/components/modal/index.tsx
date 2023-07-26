@@ -1,7 +1,6 @@
 import { Modal, Box } from "@mantine/core";
 import NiceModal, { useModal } from "@ebay/nice-modal-react";
 import { useGoogleLogin } from "@react-oauth/google";
-import jwt_decode from "jwt-decode";
 import { GoogleButton } from "../button/google";
 import React, { useState } from "react";
 import axios from "axios";
