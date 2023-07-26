@@ -57,6 +57,10 @@ export default function Navigation({
                 arrow: {
                   borderColor: "#000",
                 },
+                dropdown: {
+                  background: "black",
+                  border: "none",
+                },
               }}
             >
               <Menu.Target>
@@ -79,13 +83,13 @@ export default function Navigation({
                     ?.map((item, index) => (
                       <Link
                         href={`${item.href}`}
-                        className={styles.navigtion__links__link}
+                        className={styles.navigtion__dropdown__links__link}
                         key={index}
                         style={{
-                          color,
+                          color: "white",
                           borderBottom:
                             router.asPath.slice(1) == item.href
-                              ? `1px solid ${color}`
+                              ? `1px solid white`
                               : "",
                         }}
                       >
@@ -101,7 +105,15 @@ export default function Navigation({
           {data
             .filter((item) => item.type == "button")
             .map((item, index) => (
-              <Button href={item.href} key={index}>
+              <Button
+                onClick={() =>
+                  router.asPath !== item.href
+                    ? router.push(`/${item.href}`)
+                    : null
+                }
+                style={{ fontSize: ".7em", padding: "5px 10px" }}
+                key={index}
+              >
                 {item.title}
               </Button>
             ))}

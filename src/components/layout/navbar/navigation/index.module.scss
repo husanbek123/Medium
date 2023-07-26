@@ -12,6 +12,11 @@
   }
   &__dropdown {
     display: none;
+    &__links{
+      &__link{
+        width: 100px;
+      }
+    }
   }
 }
 @media (max-width: 730px) {

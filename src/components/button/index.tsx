@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 
 import { Roboto } from "next/font/google";
+import { useRouter } from "next/router";
 
 const roboto = Roboto({
   weight: "400",
@@ -21,8 +22,7 @@ export default function Button({
   }
 >) {
   return (
-    <Link
-      href={props.href}
+    <button
       className={[
         styles.button,
         hoverType == "transparent" && styles.transparent,
@@ -32,6 +32,6 @@ export default function Button({
       {...(props as any)}
     >
       {children}
-    </Link>
+    </button>
   );
 }

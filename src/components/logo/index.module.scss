@@ -4,22 +4,28 @@
   align-items: center;
   color: black;
   transition: 0.3s;
-  width: 30%;
   h2 {
-    font-weight: 200;
-    margin-left: -15px;
+    width: 70%;
+    font-weight: 700;
     font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 30px;
+  }
+  img{
+    width: 30%;
+  }
+
+}
+@media (max-width: 500px) {
+  .logo {
+    width: 35%;
   }
 }
-@media(max-width:500px){
-  .logo{
+@media (max-width: 360px) {
+  .logo {
     width: 35%;
-    gap: 20px;
+    min-width: 150px;
     h2{
-      font-size: 17px;
-    }
-    img{
-      width: 30%;
+      font-size: 22px;
     }
   }
 }

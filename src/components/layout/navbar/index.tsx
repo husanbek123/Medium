@@ -12,7 +12,6 @@ export default function Navbar({}: Props) {
   const token = useToken((state) => state.token);
   const [show, setShow] = React.useState(false);
   const pageOptions = Pages.find((i) => i.path == router.asPath);
-  console.log(pageOptions?.navbarBackground);
 
   React.useEffect(() => {
     const controlNavbar = () => {
@@ -27,11 +26,15 @@ export default function Navbar({}: Props) {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, []);
+  
   return (
     <header
       className={[styles.navbar, show && styles.hidden].join(" ")}
       style={{
         background: pageOptions?.navbarBackground,
+        borderBottom: `2px solid ${
+          pageOptions?.navbarBackground == "#4479ff" ? "white" : "black"
+        }`,
       }}
     >
       <div className={["container", styles.container].join(" ")}>

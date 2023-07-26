@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ebay/nice-modal-react": "^1.2.10",
     "@mantine/core": "^6.0.17",
     "@reduxjs/toolkit": "^1.9.5",
     "@tabler/icons-react": "^2.29.0",
@@ -22,6 +23,7 @@
     "next-i18next": "^14.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-player": "^2.12.0",
     "sass": "^1.64.1",
     "typescript": "5.1.6",
     "zustand": "^4.3.9"

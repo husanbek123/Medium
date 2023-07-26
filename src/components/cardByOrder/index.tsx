@@ -19,8 +19,10 @@ function CardByOrder(props: Props) {
     const controlNavbar = () => {
       setinnerWidth(window.innerWidth);
     };
+    window.addEventListener("scroll", controlNavbar);
     window.addEventListener("resize", controlNavbar);
     return () => {
+      window.addEventListener("scroll", controlNavbar);
       window.removeEventListener("resize", controlNavbar);
     };
   }, []);
@@ -44,7 +46,12 @@ function CardByOrder(props: Props) {
           </Link>
         </div>
         <div className={styles.card__content__title}>
-          <h3> {Number(innerWidth) > 350 ? props.title : props.title.slice(0,30) + '...'}</h3>
+          <h3>
+            {" "}
+            {Number(innerWidth) > 350
+              ? props.title
+              : props.title.slice(0, 30) + "..."}
+          </h3>
         </div>
         <div className={styles.card__content__info}>
           <p className={styles.card__content__info__date}>{props.date}</p>
@@ -58,11 +65,12 @@ function CardByOrder(props: Props) {
 
 export default function CardsByOrder({
   data = defaultCardByOrder,
-}: {
+  ...props
+}: Partial<React.HTMLProps<HTMLDivElement>> & {
   data?: DataTypes.ICardByOrder[];
 }) {
   return (
-    <div className={styles.cards}>
+    <div className={styles.cards} {...props}>
       {data?.map((item, index) => (
         <CardByOrder {...item} key={index} order={index + 1} />
       ))}

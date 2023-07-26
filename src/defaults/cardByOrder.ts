@@ -1,4 +1,4 @@
-const defaultCardByOrder: DataTypes.ICardByOrder[] = [
+const defaultCardByOrder: DataTypes.ICardByOrder[] | any = [
   {
     title: "A change of typeface: Microsoft’s new default font has arrived",
     company: {
