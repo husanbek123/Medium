@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import Showcase from "@/components/membership/showcase";
 import Features from "@/components/membership/features";
 import TakeYourMind from "@/components/membership/TakeMind";
+import MembersSection from "@/components/membership/MembersSection";
 
 type Props = {};
 
@@ -12,6 +13,7 @@ export default function Membership({}: Props) {
       <Showcase />
       <Features />
       <TakeYourMind />
+      <MembersSection />
     </div>
   );
 }
