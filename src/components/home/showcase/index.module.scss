@@ -1,0 +1,63 @@
+.showcase {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #ffc017;
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__textItem {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      justify-content: center;
+      color: #242424;
+      &__title {
+        font-size: 95px;
+        font-weight: 400;
+        font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+        font-feature-settings: "pnum" on, "lnum" on;
+      }
+      &__description {
+        font-weight: 400;
+        font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 23px;
+        width: 70%;
+      }
+      button {
+        width: 200px;
+      }
+    }
+    
+  }
+}
+@media(max-width:800px){
+  .showcase{
+    &__container{
+      &__textItem{
+        &__title{
+          font-size: 85px;
+        }
+      }
+    }
+  }
+}
+@media(max-width:500px){
+  .showcase{
+    &__container{
+      &__textItem{
+        &__title{
+          font-size: 55px;
+        }
+        &__description{
+          width: 100%;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

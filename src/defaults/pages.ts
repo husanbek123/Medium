@@ -12,7 +12,7 @@ const Pages : DataTypes.IPage[] = [
   {
     pagename: "Membership",
     path: "/membership",
-    navbarBackground: "rgb(68, 121, 255)",
+    navbarBackground: "#4479ff",
   },
   {
     pagename: "Write",
