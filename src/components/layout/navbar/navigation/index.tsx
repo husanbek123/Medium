@@ -23,7 +23,7 @@ export default function Navigation({
   signed = false,
 }: Props) {
   const router = useRouter();
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { toggle , close}] = useDisclosure(false);
   return (
     !signed && (
       <div className={[styles.navigtion, roboto.className].join(" ")}>
@@ -62,6 +62,8 @@ export default function Navigation({
                   border: "none",
                 },
               }}
+              opened={opened}
+              onClose={close}
             >
               <Menu.Target>
                 <div>
@@ -69,13 +71,13 @@ export default function Navigation({
                 </div>
               </Menu.Target>
 
-              <Menu.Dropdown>
+              <Menu.Dropdown >
                 <Box
                   style={{
                     display: "flex",
                     flexDirection: "column",
                     gap: "20px",
-                    padding: "10px 15px",
+                    padding: "10px 10px",
                   }}
                 >
                   {data
