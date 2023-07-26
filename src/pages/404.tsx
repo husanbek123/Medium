@@ -1,9 +1,9 @@
 import Image from "next/image";
 import image from "../../public/img404.png";
-import { Text, Box } from "@mantine/core";
 import Link from "next/link";
 import { Roboto } from "next/font/google";
 import styles from "../styles/custom404.module.scss";
+import { Box, Text } from "@mantine/core";
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],

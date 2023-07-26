@@ -7,6 +7,9 @@ import { useRouter } from "next/router";
 import { Menu, Box, Burger } from "@mantine/core";
 import Button from "@/components/button";
 import { useDisclosure } from "@mantine/hooks";
+import NiceModal from "@ebay/nice-modal-react";
+import AuthModal from "../../../registerModal";
+
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
@@ -23,7 +26,10 @@ export default function Navigation({
   signed = false,
 }: Props) {
   const router = useRouter();
-  const [opened, { toggle , close}] = useDisclosure(false);
+  const [opened, { toggle, close }] = useDisclosure(false);
+  const showModal = () => {
+    NiceModal.show(AuthModal);
+  };
   return (
     !signed && (
       <div className={[styles.navigtion, roboto.className].join(" ")}>
@@ -32,7 +38,7 @@ export default function Navigation({
             .filter((item) => item.type == "link")
             .map((item, index) => (
               <Link
-                href={item.href}
+                href={item.href || "#"}
                 className={styles.navigtion__links__link}
                 key={index}
                 style={{
@@ -71,7 +77,7 @@ export default function Navigation({
                 </div>
               </Menu.Target>
 
-              <Menu.Dropdown >
+              <Menu.Dropdown>
                 <Box
                   style={{
                     display: "flex",
@@ -108,12 +114,14 @@ export default function Navigation({
             .filter((item) => item.type == "button")
             .map((item, index) => (
               <Button
-                onClick={() =>
-                  router.asPath !== item.href
-                    ? router.push(`/${item.href}`)
-                    : null
-                }
-                style={{ fontSize: ".7em", padding: "5px 10px" }}
+                onClick={() => {
+                  if (item.href) {
+                    router.asPath != item.href ? router.push(item.href) : null;
+                  } else {
+                    showModal();
+                  }
+                }}
+                style={{ fontSize: "1em", padding: "5px 10px" }}
                 key={index}
               >
                 {item.title}

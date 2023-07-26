@@ -3,6 +3,16 @@ namespace DataTypes {
     token: string;
     setToken: (token: string) => void;
   }
+  export interface IUserData {
+    email: string;
+    password: string;
+    confirmPassword: string;
+    username: string;
+    setData: (
+      key: "email" | "password" | "confirmPassword" | "username",
+      value: string
+    ) => void;
+  }
   export interface IPage {
     pagename: string;
     path: string;
@@ -24,7 +34,7 @@ namespace DataTypes {
   }
   export type LinkData = {
     title: string;
-    href: string;
+    href?: string;
     type: "button" | "link";
   }[];
 }

@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import Logo from "@/components/logo";
 import Navigation from "./navigation";
 import { useRouter } from "next/router";
-import { useToken } from "@/utils/useLocalStorage";
+import { useToken } from "@/utils/store";
 import Pages from "@/defaults/pages";
 
 type Props = {};
