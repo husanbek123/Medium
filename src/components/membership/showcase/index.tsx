@@ -17,13 +17,12 @@ export default function Showcase({}: Props) {
       </p>
       <br />
       <Button
+        className={styles.button}
         hoverType="transparent"
         style={{
           backgroundColor: "white",
           borderColor: "white",
           color: "black",
-          fontSize: "18px",
-          // padding: "12px 12px 12px 12px",
         }}
         href="signin"
       >

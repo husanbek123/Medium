@@ -10,7 +10,7 @@ export default function Footer({}: Props) {
     <div className={styles.footer}>
       <Logo isLink={false} />
       <h3>Every idea needs a Medium</h3>
-      <FooterNavigation />
+      <FooterNavigation className={styles.navigation} />
     </div>
   );
 }

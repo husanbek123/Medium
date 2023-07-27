@@ -1,0 +1,43 @@
+@import "/src/styles/variables.scss";
+
+.btn {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+  width: fit-content;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 45%;
+  border: 0;
+  background-color: transparent;
+}
+
+.leftBtn {
+  left: 45%;
+}
+
+.rightBtn {
+}
+
+@media (max-width: $md) {
+  .btn {
+    right: 40%;
+  }
+  .leftBtn {
+    left: 40%;
+  }
+}
+
+@media (max-width: $sm) {
+  .btn {
+    right: 35%;
+    bottom: -10%;
+  }
+  .leftBtn {
+    left: 35%;
+  }
+}
