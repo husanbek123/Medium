@@ -1,4 +1,4 @@
-const defaultLinks: DataTypes.LinkData = [
+const defaultLinks: DataTypes.ILinkData[] = [
   { title: "Our story", href: "about", type: "link" },
   { title: "Membership", href: "membership", type: "link" },
   { title: "Write", href: "write", type: "link" },

@@ -5,11 +5,13 @@ import { GoogleButton } from "../button/google";
 import React, { useState } from "react";
 import axios from "axios";
 import { ErrorToast, SuccessToast } from "../toast";
+import { useUserData } from "@/utils/store";
 
 export default React.memo(
   NiceModal.create(() => {
     const [disabled, setDisabled] = useState(false);
     const modal = useModal();
+    const setEmail = useUserData((state) => state.setData);
     const login = useGoogleLogin({
       onSuccess: async (respose) => {
         try {
@@ -22,8 +24,8 @@ export default React.memo(
             }
           );
           SuccessToast("Success joined!");
-          console.log(res.data);
           setDisabled(() => false);
+          setEmail("email", res.data.email);
         } catch (err) {
           console.log(err);
           setDisabled(() => false);

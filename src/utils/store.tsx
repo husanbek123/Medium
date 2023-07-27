@@ -1,3 +1,4 @@
+import defaultLinks from "@/defaults/links";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -21,7 +22,15 @@ export const useUserData = create<DataTypes.IUserData>()((set) => ({
       email: state.email,
       password: state.password,
       confirmPassword: state.confirmPassword,
-      username : state.username,
-      [key] : value
+      username: state.username,
+      [key]: value,
+    })),
+}));
+
+export const useHeaderData = create<DataTypes.IUseHeaderData>()((set) => ({
+  data: defaultLinks,
+  setData: (data) =>
+    set(() => ({
+      data,
     })),
 }));

@@ -16,13 +16,13 @@ const roboto = Roboto({
 });
 type Props = {
   color: string;
-  data?: DataTypes.LinkData;
+  data?: Partial<DataTypes.ILinkData>[];
   signed: boolean;
 };
 
 export default function Navigation({
   color = "black",
-  data = defaultLinks,
+  data,
   signed = false,
 }: Props) {
   const router = useRouter();
@@ -35,8 +35,8 @@ export default function Navigation({
       <div className={[styles.navigtion, roboto.className].join(" ")}>
         <div className={styles.navigtion__links}>
           {data
-            .filter((item) => item.type == "link")
-            .map((item, index) => (
+            ?.filter((item) => item.type == "link")
+            ?.map((item, index) => (
               <Link
                 href={item.href || "#"}
                 className={styles.navigtion__links__link}
@@ -54,64 +54,66 @@ export default function Navigation({
             ))}
         </div>
         <div>
-          <Box className={styles.navigtion__dropdown}>
-            <Menu
-              width={200}
-              shadow="md"
-              withArrow
-              styles={{
-                arrow: {
-                  borderColor: "#000",
-                },
-                dropdown: {
-                  background: "black",
-                  border: "none",
-                },
-              }}
-              opened={opened}
-              onClose={close}
-            >
-              <Menu.Target>
-                <div>
-                  <Burger opened={opened} onClick={toggle} fz={"sm"} />
-                </div>
-              </Menu.Target>
+          {data?.length ? (
+            <Box className={styles.navigtion__dropdown}>
+              <Menu
+                width={200}
+                shadow="md"
+                withArrow
+                styles={{
+                  arrow: {
+                    borderColor: "#000",
+                  },
+                  dropdown: {
+                    background: "black",
+                    border: "none",
+                  },
+                }}
+                opened={opened}
+                onClose={close}
+              >
+                <Menu.Target>
+                  <div>
+                    <Burger opened={opened} onClick={toggle} fz={"sm"} />
+                  </div>
+                </Menu.Target>
 
-              <Menu.Dropdown>
-                <Box
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "20px",
-                    padding: "10px 10px",
-                  }}
-                >
-                  {data
-                    ?.filter((item) => item.type == "link")
-                    ?.map((item, index) => (
-                      <Link
-                        href={`${item.href}`}
-                        className={styles.navigtion__dropdown__links__link}
-                        key={index}
-                        style={{
-                          color: "white",
-                          borderBottom:
-                            router.asPath.slice(1) == item.href
-                              ? `1px solid white`
-                              : "",
-                        }}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                </Box>
-              </Menu.Dropdown>
-            </Menu>
-          </Box>
+                <Menu.Dropdown>
+                  <Box
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "20px",
+                      padding: "10px 10px",
+                    }}
+                  >
+                    {data
+                      ?.filter((item) => item.type == "link")
+                      ?.map((item, index) => (
+                        <Link
+                          href={`${item.href}`}
+                          className={styles.navigtion__dropdown__links__link}
+                          key={index}
+                          style={{
+                            color: "white",
+                            borderBottom:
+                              router.asPath.slice(1) == item.href
+                                ? `1px solid white`
+                                : "",
+                          }}
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                  </Box>
+                </Menu.Dropdown>
+              </Menu>
+            </Box>
+          ) : null}
         </div>
         <div className={styles.navigtion__buttons}>
           {data
-            .filter((item) => item.type == "button")
+            ?.filter((item) => item.type == "button")
             .map((item, index) => (
               <Button
                 onClick={() => {
