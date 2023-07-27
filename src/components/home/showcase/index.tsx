@@ -3,6 +3,9 @@ import styles from "./index.module.scss";
 import { useEffect, useState } from "react";
 import AuthModal from "../../registerModal";
 import NiceModal from "@ebay/nice-modal-react";
+import Lottie from "lottie-react";
+import WorldAnimation from "@/data/world.json";
+
 export default function HomeShowcase() {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
@@ -16,6 +19,8 @@ export default function HomeShowcase() {
   return (
     loaded && (
       <div className={styles.showcase}>
+        <Lottie animationData={WorldAnimation} className={styles.background} />
+
         <div className={["container", styles.showcase__container].join(" ")}>
           <div className={styles.showcase__container__textItem}>
             <h1 className={styles.showcase__container__textItem__title}>
