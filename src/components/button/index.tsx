@@ -13,11 +13,15 @@ export default function Button({
   className,
   children,
   hoverType,
+  background = "black",
+  padding = "10px 15px",
   ...props
 }: Partial<
   Omit<React.HTMLProps<HTMLButtonElement>, "children"> & {
     children: string;
     hoverType: "transparent" | "opacity";
+    background: string;
+    padding: string;
   }
 >) {
   return (
@@ -29,6 +33,7 @@ export default function Button({
         styles[className || ""],
         className,
       ].join(" ")}
+      style={{ background, padding, ...props.style }}
       {...(props as any)}
     >
       {children}

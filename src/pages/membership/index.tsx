@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
-import Showcase from "@/components/membership/Showcase";
+import Showcase from "@/components/membership/showcase";
 import Features from "@/components/membership/features";
 import TakeYourMind from "@/components/membership/TakeMind";
 import MembersSection from "@/components/membership/MembersSection";

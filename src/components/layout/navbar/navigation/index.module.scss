@@ -10,6 +10,11 @@
     justify-content: center;
     font-size: 15px;
   }
+  &__buttons{
+    &__button{
+      font-size: 1em;
+    }
+  }
   &__dropdown {
     display: none;
     &__links{
@@ -26,6 +31,16 @@
     }
     &__dropdown {
       display: block;
+    }
+  }
+}
+@media(max-width:500px){
+  .navigtion{
+    &__buttons{
+      button{
+        padding: 0px;
+        font-size: 10px;
+      }
     }
   }
 }

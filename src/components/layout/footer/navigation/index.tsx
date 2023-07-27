@@ -10,8 +10,8 @@ type Props = {
 export default function FooterNavigation({ className }: Props) {
   return (
     <ul className={[styles.list, className].join(" ")}>
-      {defaultLinks.slice(0, 3).map((item) => (
-        <Link href={item.href}>
+      {defaultLinks.slice(0, 3).map((item,index) => (
+        <Link href={item.href || '#'} key={index}>
           <li>{item.title}</li>
         </Link>
       ))}
