@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import Button from "@/components/button";
 import Image from "next/image";
 
+
 type Props = {} & React.HTMLProps<HTMLDivElement>;
 
 export default function Showcase({}: Props) {
@@ -10,6 +11,7 @@ export default function Showcase({}: Props) {
     <div
       className={[styles.showcase, "membership-center", "paddings"].join(" ")}
     >
+
       <h1>Fuel great thinking.</h1>
       <p>
         Become a Medium member to enjoy unlimited access and directly support
