@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.scss";
-import TopUserCards from "@/components/topUserCard";
 import CardsByOrder from "@/components/cardByOrder";
 import HomeShowcase from "@/components/home/showcase";
 

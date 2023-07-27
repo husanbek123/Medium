@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import defaultCardByOrder from "@/defaults/cardByOrder";
 import Link from "next/link";
 import React, { useState } from "react";
+import { Avatar } from "@mantine/core";
 type Props = {
   title: string;
   order: string | number;
@@ -33,14 +34,8 @@ function CardByOrder(props: Props) {
       </div>
       <div className={styles.card__content}>
         <div className={styles.card__content__company}>
-          <div className={styles.card__content__company__image}>
-            <Image
-              src={props.company.image}
-              alt="Image"
-              width={25}
-              height={25}
-            />
-          </div>
+          <Avatar src={props.company.image} alt="Image" size={"sm"} radius={"xl"}/>
+
           <Link href={"#"} className={styles.card__content__company__name}>
             {props.company.name}
           </Link>

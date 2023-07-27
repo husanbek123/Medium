@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import Logo from "@/components/logo";
 import Navigation from "./navigation";
 import { useRouter } from "next/router";
-import { useToken } from "@/utils/useLocalStorage";
+import { useHeaderData, useToken } from "@/utils/store";
 import Pages from "@/defaults/pages";
 
 type Props = {};
@@ -26,12 +26,12 @@ export default function Navbar({}: Props) {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, []);
-  
+  const headerData = useHeaderData((state) => state.data);
   return (
     <header
       className={[styles.navbar, show && styles.hidden].join(" ")}
       style={{
-        background: pageOptions?.navbarBackground,
+        background: pageOptions?.navbarBackground || "white",
         borderBottom: `2px solid ${
           pageOptions?.navbarBackground == "#4479ff" ? "white" : "black"
         }`,
@@ -42,6 +42,7 @@ export default function Navbar({}: Props) {
           color={router.asPath === "/membership" && !show ? "light" : "dark"}
         />
         <Navigation
+          data={headerData}
           signed={!!token}
           color={
             router.asPath === "/membership" && !show ? "#ffffff" : "#000000"

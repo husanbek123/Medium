@@ -54,6 +54,14 @@ export function GoogleButton(props: ButtonProps & { onClick?: () => void }) {
           </g>
         </svg>
       }
+      styles={{
+        root: {
+          width: "200px",
+          padding: "5px 15px",
+          boxSizing: "content-box",
+          borderRadius: "30px",
+        },
+      }}
       {...props}
     >
       Continue with google

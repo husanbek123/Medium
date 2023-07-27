@@ -1,7 +1,7 @@
 import Button from "@/components/button";
 import styles from "./index.module.scss";
 import { useEffect, useState } from "react";
-import AuthModal from "../../modal";
+import AuthModal from "../../registerModal";
 import NiceModal from "@ebay/nice-modal-react";
 export default function HomeShowcase() {
   const [loaded, setLoaded] = useState(false);
@@ -11,7 +11,7 @@ export default function HomeShowcase() {
     }
   }, []);
   const showModal = () => {
-    NiceModal.show(AuthModal, { name: "Nate" });
+    NiceModal.show(AuthModal);
   };
   return (
     loaded && (
