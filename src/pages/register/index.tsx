@@ -15,9 +15,6 @@ export default function Register() {
   const [active, setActive] = React.useState<number>(0);
   React.useEffect(() => {
     setHeaderData([]);
-    if (cookies) {
-      router.push("/register?step=2");
-    }
   }, []);
   React.useEffect(() => {
     if (active == 0 && router.query.step) {
