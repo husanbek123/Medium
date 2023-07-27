@@ -7,26 +7,25 @@
   color: black;
   height: 70px;
   transition: 0.3s;
-  width: 20%;
-  img{
-      width: 150px;
-      height: 50px;
+  width: 13%;
+  img {
+    width: 150px;
+    height: 50px;
   }
 }
-@media(max-width:800px){
-  .logo{
+@media (max-width: 800px) {
+  .logo {
     width: 55%;
   }
 }
 @media (max-width: 500px) {
   .logo {
     width: 45%;
-
   }
 }
 @media (max-width: $sm) {
   .logo {
-    img{
+    img {
       width: 70%;
     }
   }

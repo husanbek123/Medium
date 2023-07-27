@@ -25,11 +25,25 @@ export default function Navbar({}: Props) {
         setShow(false);
       }
     };
+
+    if (router.asPath == "/creators") {
+      setHeaderData([
+        { type: "link", title: "Sign in", href: "/sigin" },
+        {
+          type: "button",
+          href: "/sigin",
+          title: "Start writing",
+        },
+      ]);
+    } else {
+      setHeaderData(defaultLinks);
+    }
+
     window.addEventListener("scroll", controlNavbar);
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
-  }, []);
+  }, [router.asPath]);
 
   return (
     <header

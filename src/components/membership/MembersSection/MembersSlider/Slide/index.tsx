@@ -12,7 +12,7 @@ export default function Slide({ author, img, text }: Props) {
   return (
     <div className={styles.slide}>
       <div className={styles.slide__img}>
-        <Image src={img} alt="" width={150} height={150} />
+        <Image src={img} alt="" width={225} height={225} />
       </div>
       <div className={styles.slide__text}>
         <q>{text}</q>
