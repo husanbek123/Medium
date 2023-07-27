@@ -26,8 +26,8 @@ export default function MembersSlider({ members }: Props) {
 
   return (
     <Slider {...settings}>
-      {members.map((member) => (
-        <Slide {...member} />
+      {members.map((member , index) => (
+        <Slide key={index} {...member} />
       ))}
     </Slider>
   );

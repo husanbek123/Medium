@@ -5,6 +5,7 @@ import Navigation from "./navigation";
 import { useRouter } from "next/router";
 import { useHeaderData, useToken } from "@/utils/store";
 import Pages from "@/defaults/pages";
+import defaultLinks from "@/defaults/links";
 
 type Props = {};
 export default function Navbar({}: Props) {
@@ -12,6 +13,9 @@ export default function Navbar({}: Props) {
   const token = useToken((state) => state.token);
   const [show, setShow] = React.useState(false);
   const pageOptions = Pages.find((i) => i.path == router.asPath);
+  const { data: headerData, setData: setHeaderData } = useHeaderData(
+    (state) => state
+  );
 
   React.useEffect(() => {
     const controlNavbar = () => {
@@ -26,7 +30,7 @@ export default function Navbar({}: Props) {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, []);
-  const headerData = useHeaderData((state) => state.data);
+
   return (
     <header
       className={[styles.navbar, show && styles.hidden].join(" ")}

@@ -13,7 +13,7 @@ export default function Logo({ color = "dark", isLink = true }: Props) {
     <Link href={isLink ? "/" : ""} className={styles.logo}>
       <Image
         // src={color == "light" ? '/medium-light.svg' : "/medium.svg"}
-        src={"/medium.svg"}
+        src={"/medium_logo.svg"}
         alt=""
         width={100}
         height={60}
@@ -21,13 +21,6 @@ export default function Logo({ color = "dark", isLink = true }: Props) {
           filter: color == "light" ? "invert(100%)" : "none",
         }}
       />
-      <h2
-        style={{
-          color: color == "light" ? "white" : "black",
-        }}
-      >
-        Medium
-      </h2>
     </Link>
   );
 }

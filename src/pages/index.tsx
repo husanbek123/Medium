@@ -3,8 +3,17 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.scss";
 import CardsByOrder from "@/components/cardByOrder";
 import HomeShowcase from "@/components/home/showcase";
+import { useHeaderData } from "@/utils/store";
+import { useEffect } from "react";
+import defaultLinks from "@/defaults/links";
 
 export default function Home() {
+  const {setData,data} = useHeaderData(state=>state)
+  useEffect(()=>{
+    if (!data.length) {
+      setData(defaultLinks)
+    }
+  },[])
   return (
     <>
       <Head>

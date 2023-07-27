@@ -23,7 +23,7 @@ export default function Showcase({}: Props) {
           borderColor: "white",
           color: "black",
           fontSize: "18px",
-          // padding: "12px 12px 12px 12px",
+          padding: "12px 12px 12px 12px",
         }}
         href="signin"
       >

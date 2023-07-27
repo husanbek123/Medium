@@ -5,13 +5,12 @@ import { GoogleButton } from "../button/google";
 import React, { useState } from "react";
 import axios from "axios";
 import { ErrorToast, SuccessToast } from "../toast";
-import { useUserData } from "@/utils/store";
-
+import { useCookies } from "react-cookie";
 export default React.memo(
   NiceModal.create(() => {
     const [disabled, setDisabled] = useState(false);
     const modal = useModal();
-    const setEmail = useUserData((state) => state.setData);
+    const [_, setCookie] = useCookies(["registered", "data"]);
     const login = useGoogleLogin({
       onSuccess: async (respose) => {
         try {
@@ -23,9 +22,10 @@ export default React.memo(
               },
             }
           );
-          SuccessToast("Success joined!");
           setDisabled(() => false);
-          setEmail("email", res.data.email);
+          setCookie("registered", true);
+          setCookie("data", { email: res.data.email, username: res.data.name });
+          SuccessToast("Success joined!");
         } catch (err) {
           console.log(err);
           setDisabled(() => false);
@@ -46,6 +46,7 @@ export default React.memo(
       <Modal
         title=""
         centered
+        withCloseButton
         opened={modal.visible}
         onClose={async () => {
           await modal.hide();

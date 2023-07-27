@@ -1,31 +1,18 @@
 import defaultLinks from "@/defaults/links";
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
 
 export const useToken = create<DataTypes.IUseToken>()(
   persist(
     (set) => ({
       token: "",
-      setToken: (token) => set((state) => ({ token: state.token })),
+      setToken: (token) => set((state) => ({ token })),
     }),
     { name: "access_token" }
   )
 );
 
-export const useUserData = create<DataTypes.IUserData>()((set) => ({
-  email: "",
-  password: "",
-  confirmPassword: "",
-  username: "",
-  setData: (key, value) =>
-    set((state) => ({
-      email: state.email,
-      password: state.password,
-      confirmPassword: state.confirmPassword,
-      username: state.username,
-      [key]: value,
-    })),
-}));
+
 
 export const useHeaderData = create<DataTypes.IUseHeaderData>()((set) => ({
   data: defaultLinks,

@@ -30,6 +30,7 @@ export default function Navigation({
   const showModal = () => {
     NiceModal.show(AuthModal);
   };
+
   return (
     !signed && (
       <div className={[styles.navigtion, roboto.className].join(" ")}>
@@ -73,9 +74,12 @@ export default function Navigation({
                 onClose={close}
               >
                 <Menu.Target>
-                  <div>
-                    <Burger opened={opened} onClick={toggle} fz={"sm"} />
-                  </div>
+                  <Burger
+                    size={"sm"}
+                    opened={opened}
+                    onClick={toggle}
+                    fz={"sm"}
+                  />
                 </Menu.Target>
 
                 <Menu.Dropdown>
@@ -116,15 +120,15 @@ export default function Navigation({
             ?.filter((item) => item.type == "button")
             .map((item, index) => (
               <Button
-                onClick={() => {
-                  if (item.href) {
+              onClick={() => {
+                if (item.href) {
                     router.asPath != item.href ? router.push(item.href) : null;
                   } else {
                     showModal();
                   }
                 }}
-                style={{ fontSize: "1em", padding: "5px 10px" }}
                 key={index}
+                className={styles.navigtion__buttons__button}
               >
                 {item.title}
               </Button>
