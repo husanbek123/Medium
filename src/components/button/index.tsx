@@ -31,6 +31,7 @@ export default function Button({
         hoverType == "transparent" && styles.transparent,
         roboto.className,
         styles[className || ""],
+        className,
       ].join(" ")}
       style={{ background, padding, ...props.style }}
       {...(props as any)}

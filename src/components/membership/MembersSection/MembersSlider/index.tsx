@@ -3,6 +3,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slide from "./Slide";
+import SliderButton from "./SliderButton";
+
+import {
+  IconArrowLeft,
+  IconArrowNarrowLeft,
+  IconArrowNarrowRight,
+  IconArrowRight,
+  IconChevronLeft,
+  IconChevronRight,
+} from "@tabler/icons-react";
 
 interface MemberSlide {
   author: string;
@@ -22,6 +32,16 @@ export default function MembersSlider({ members }: Props) {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    nextArrow: (
+      <SliderButton side="right">
+        {<IconArrowNarrowRight size={32} />}
+      </SliderButton>
+    ),
+    prevArrow: (
+      <SliderButton side="left">
+        {<IconArrowNarrowLeft size={32} />}
+      </SliderButton>
+    ),
   };
 
   return (

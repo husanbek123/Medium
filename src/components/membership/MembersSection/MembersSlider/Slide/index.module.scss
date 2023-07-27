@@ -1,9 +1,11 @@
+@import "/src/styles/variables.scss";
+
 .slide {
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 20px;
-  height: 300px;
+  height: 250px;
 
   .slide__img {
   }
@@ -19,6 +21,23 @@
 
     h4 {
       font-family: Arial, Helvetica, sans-serif;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .slide {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 320px;
+
+    .slide__text {
+      max-width: none;
+    }
+
+    .slide__img {
+      margin-bottom: 10px;
     }
   }
 }

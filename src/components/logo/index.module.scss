@@ -1,3 +1,5 @@
+@import "/src/styles/variables.scss";
+
 .logo {
   display: flex;
   justify-content: center;
@@ -10,7 +12,6 @@
       width: 150px;
       height: 50px;
   }
-
 }
 @media(max-width:800px){
   .logo{
@@ -23,7 +24,7 @@
 
   }
 }
-@media (max-width: 420px) {
+@media (max-width: $sm) {
   .logo {
     img{
       width: 70%;

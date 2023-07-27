@@ -25,3 +25,38 @@
     left: 0;
   }
 }
+
+@media (max-width: $md) {
+  .section {
+    h1 {
+      font-size: 52px;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .section {
+    border: 1px solid black;
+    border-right: 0;
+    border-left: 0;
+    height: 300px;
+    h1 {
+      font-size: 52px;
+      width: 100%;
+    }
+
+    img {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .section {
+    height: 240px;
+    h1 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+  }
+}

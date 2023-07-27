@@ -17,6 +17,7 @@ export default function Showcase({}: Props) {
       </p>
       <br />
       <Button
+        className={styles.button}
         hoverType="transparent"
         style={{
           backgroundColor: "white",

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
-import Showcase from "@/components/membership/showcase";
+import Showcase from "@/components/membership/Showcase";
 import Features from "@/components/membership/features";
 import TakeYourMind from "@/components/membership/TakeMind";
 import MembersSection from "@/components/membership/MembersSection";
@@ -12,8 +12,8 @@ export default function Membership({}: Props) {
     <div className={[styles.page, "default-font-sizes"].join(" ")}>
       <Showcase />
       <Features />
-      <TakeYourMind />
       <MembersSection />
+      <TakeYourMind />
     </div>
   );
 }

@@ -30,3 +30,9 @@
   left: 100px !important;
   z-index: 9999;
 }
+
+@media (max-width: 375px) {
+  .paddings {
+    padding: 10px 25px;
+  }
+}
