@@ -20,7 +20,7 @@ export default function Step2() {
     return () => {
       form.reset();
     };
-  }, [cookies.data.email]);
+  }, [cookies?.data?.email]);
   return (
     <div className={styles.step}>
       <div
