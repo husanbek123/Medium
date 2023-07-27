@@ -120,8 +120,8 @@ export default function Navigation({
             ?.filter((item) => item.type == "button")
             .map((item, index) => (
               <Button
-              onClick={() => {
-                if (item.href) {
+                onClick={() => {
+                  if (item.href) {
                     router.asPath != item.href ? router.push(item.href) : null;
                   } else {
                     showModal();
