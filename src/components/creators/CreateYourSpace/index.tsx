@@ -17,7 +17,9 @@ export default function CreateYourSpace({}: Props) {
               Tell your story your way — with different ways to write, style and
               brand your work.
             </p>
-            <Button className={styles.section__main__text__bottom__button}>Start writing</Button>
+            <Button className={styles.section__main__text__bottom__button}>
+              Start writing
+            </Button>
           </div>
         </div>
         <div className={styles.section__main__img}>

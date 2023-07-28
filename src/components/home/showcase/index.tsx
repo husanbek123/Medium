@@ -19,7 +19,11 @@ export default function HomeShowcase() {
   return (
     loaded && (
       <div className={styles.showcase}>
-        <Lottie animationData={WorldAnimation} className={styles.background} />
+        <Lottie
+          animationData={WorldAnimation}
+          className={styles.background}
+          width={2000}
+        />
 
         <div className={["container", styles.showcase__container].join(" ")}>
           <div className={styles.showcase__container__textItem}>

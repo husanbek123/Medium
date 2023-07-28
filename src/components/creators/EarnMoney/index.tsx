@@ -8,14 +8,6 @@ type Props = {};
 export default function EarnMoney({}: Props) {
   return (
     <section className={styles.section}>
-      {/* <Image
-        src={
-          "https://cdn-static-1.medium.com/sites/medium.com/creators/images/cubes.png"
-        }
-        alt=""
-        width={1000}
-        height={400}
-      /> */}
       <h1>
         Earn money from <br /> your writing.
       </h1>
